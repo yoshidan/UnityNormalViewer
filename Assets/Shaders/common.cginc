@@ -4,5 +4,4 @@ struct MeshData
     float3 normal;
     float3 worldVertex;
     float4x4 rotationMatrix;
-    float4 quaternion;
 };

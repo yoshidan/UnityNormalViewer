@@ -76,7 +76,6 @@ void NormalMain(uint3 id: SV_DispatchThreadID)
         2 * q.x * q.z - 2 * q.y * q.w, 2 * q.y * q.z + 2 * q.x * q.w, 1 - 2 * q.x * q.x - 2 * q.y * q.y, 0,
         0, 0, 0, 1,
     };
-    _Buffer[index].quaternion = q;
     _Buffer[index].rotationMatrix = mat;
 
     

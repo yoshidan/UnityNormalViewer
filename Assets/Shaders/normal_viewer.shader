@@ -8,10 +8,6 @@
             "RenderType"="Transparent" 
         }
         LOD 100
-        Offset 0, -100
-        Blend SrcAlpha OneMinusSrcAlpha
-        AlphaToMask On
-        Cull Off
 
         Pass
         {
@@ -52,7 +48,7 @@
                 float4 wpos = mul(m.rotationMatrix, v.vertex * scale) + float4(m.worldVertex.xyz, 1.0);                
                 o.vertex = mul(UNITY_MATRIX_VP, float4(wpos.xyz, 1.0)) ;
 
-                o.color = m.quaternion;
+                o.color = float4(1,0,0,0);
                 return o;
             }
 

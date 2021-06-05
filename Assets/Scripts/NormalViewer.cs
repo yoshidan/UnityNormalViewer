@@ -11,7 +11,6 @@ public class NormalViewer : MonoBehaviour
         public Vector3 normal;
         public Vector3 worldVertex;
         public Matrix4x4 rotationMatrix;
-        public Quaternion quaternion;
     }
     
     [SerializeField] private ComputeShader computeShader;
@@ -82,6 +81,7 @@ public class NormalViewer : MonoBehaviour
     
     private void Draw()
     {
+        
         if (visibleMaterial == null || argsBuffer == null || visibleMesh == null) return;
         
         computeShader.SetMatrix("_LocalToWorldMatrix",target.transform.localToWorldMatrix);
