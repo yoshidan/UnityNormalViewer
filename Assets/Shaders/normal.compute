@@ -67,6 +67,7 @@ void NormalMain(uint3 id: SV_DispatchThreadID)
     const int index = id.x;
     MeshData data = _Buffer[index];
 
+    // The argument normal is the direction in local coordinates, so give the object rotation to the normal
     // 引数の法線はローカル座標での方向なので、オブジェクトの回転を法線に与える
     float4 q = from_to_rotation(float3(0, 1, 0), mul(_Rotation, data.normal));
     float4x4 mat = {
