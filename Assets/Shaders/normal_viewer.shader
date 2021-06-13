@@ -42,9 +42,9 @@
                 //法線表示を示す線をCube想定にしているので、Cubeをup方向に縦長にするためにスケールを調整している
                 //Since the line showing the normal display is assumed to be Cube, the scale is adjusted to make Cube vertically long in the up direction.
                 const float4 scale = float4(0.005,0.05,0.005,1);
-;
-                // このメッシュの各頂点のワールド座標に対して法線方向のvectorを追加する
-                // Add a normal vector to the world coordinates of each vertex of this mesh
+
+                // Cubeが法線の方向になるように、Cubeの各頂点に対してオブジェクトの回転を適用し、対象オブジェクトの法線の始点位置に移動する。
+                // Apply object rotation to each vertex of the Cube so that the Cube is in the direction of the normal, and move it to the starting point of the target object's normal.
                 float4 wpos = mul(m.rotationMatrix, v.vertex * scale) + float4(m.worldVertex.xyz, 1.0);                
                 o.vertex = mul(UNITY_MATRIX_VP, float4(wpos.xyz, 1.0)) ;
 
